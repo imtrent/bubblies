@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './Header';
 
 export default class Bubblies extends React.Component {
 	render() {
 		return (
-			<p>Test to see if component is rendering</p>
+			<div>
+				<Header />
+			</div>
 		);
 	}
 }
