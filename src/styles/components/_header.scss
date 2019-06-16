@@ -27,20 +27,12 @@
 			}
 		}
 	}
-
-	.hamburger {
-		display: none;
-	}
 }
 
 @media (max-width: $breakpoint-medium) {
 	.header {
 		ul {
 			display: none;
-		}
-
-		.hamburger {
-			display: inline-block;
 		}
 	}
 }
