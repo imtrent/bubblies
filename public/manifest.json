@@ -1,0 +1,8 @@
+{
+  "short_name": "Bubblies",
+  "name": "Convert your code into svg's of beautiful code bubbles",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
