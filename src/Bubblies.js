@@ -1,11 +1,8 @@
 import React from 'react';
+import Editor from './components/editor';
 
 const Bubblies = () => {
-    return (
-        <div>
-            <p>Bubblies</p>
-        </div>
-    );
+    return <Editor />;
 };
 
 export default Bubblies;
