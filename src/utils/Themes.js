@@ -1,4 +1,10 @@
-export default {
+export const themeList = [
+    { value: 'ayu', label: 'Ayu' },
+    { value: 'cobalt', label: 'Cobalt' },
+    { value: 'material', label: 'Material' }
+];
+
+export const Themes = {
     ayu: {
         background: '#0A0E14',
         text: '#B3B1AD',
