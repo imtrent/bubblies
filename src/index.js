@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bubblies from './Bubblies';
+import Bubblies from './views/bubblies/Bubblies';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Bubblies />, document.getElementById('react-root'));
