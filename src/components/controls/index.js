@@ -3,14 +3,14 @@ import Select from 'react-select';
 import { themeList } from '../../utils/Themes';
 
 const Controls = ({ changeTheme }) => {
-    const [selectedOption, setSelectedOption] = useState({
+    const [selectedTheme, setSelectedTheme] = useState({
         value: 'ayu',
         label: 'Ayu'
     });
 
-    const handleChange = option => {
-        setSelectedOption(option);
-        changeTheme(option);
+    const handleChange = theme => {
+        setSelectedTheme(theme);
+        changeTheme(theme);
     };
 
     return (
@@ -18,7 +18,7 @@ const Controls = ({ changeTheme }) => {
             <Select
                 options={themeList}
                 onChange={handleChange}
-                value={selectedOption}
+                value={selectedTheme}
             />
         </div>
     );
