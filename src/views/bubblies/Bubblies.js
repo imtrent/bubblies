@@ -6,7 +6,7 @@ import { Container } from './style';
 
 const Bubblies = () => {
     const [settings, setSettings] = useState({
-        window: {
+        browser: {
             tabBar: true,
             border: '5px'
         },
