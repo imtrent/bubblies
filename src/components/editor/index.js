@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import TabBar from '../tabBar';
 import { Wrapper } from './style';
 
-const Editor = () => {
-    const [settings, setSettings] = useState({
-        window: {
-            border: '5px'
-        }
-    });
+const Editor = ({ settings }) => {
     return (
-        <ThemeProvider theme={}>
-            <Wrapper border={settings.window.border}>
-                <p>test</p>
+        <ThemeProvider theme={settings.theme}>
+            <Wrapper border={settings.browser.border}>
+                {settings.browser.tabBar && (
+                    <TabBar border={settings.browser.border} />
+                )}
             </Wrapper>
         </ThemeProvider>
     );
