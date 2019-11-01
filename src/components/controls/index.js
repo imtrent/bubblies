@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { themeList } from '../../utils/Themes';
+import Border from './border';
 
-const Controls = ({ changeTheme }) => {
-    const [selectedTheme, setSelectedTheme] = useState({
-        value: 'ayu',
-        label: 'Ayu'
-    });
-
-    const handleChange = theme => {
-        setSelectedTheme(theme);
-        changeTheme(theme);
+const Controls = ({ handleChangeTheme, handleBrowserSetting }) => {
+    const changeBrowserSetting = (property, value) => {
+        handleBrowserSetting(property, value);
     };
 
     return (
         <div>
             <Select
                 options={themeList}
-                onChange={handleChange}
-                value={selectedTheme}
+                onChange={handleChangeTheme}
+                defaultValue={{ label: 'Ayu', value: 'ayu' }}
             />
+            <Border changeBrowserSetting={changeBrowserSetting} />
         </div>
     );
 };

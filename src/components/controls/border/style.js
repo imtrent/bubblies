@@ -1,19 +1,17 @@
 import styled from 'styled-components';
 
 export const ControlBorder = styled.div`
-    /* width: 100px;
-    height: 100px; */
     display: flex;
 `;
 
 export const BorderControl = styled.div`
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-image: url('${props => props.background}');
     margin-right: 15px;
+    cursor: pointer;
 
     &:last-of-type {
         margin-right: 0;
-        background-color: green;
     }
 `;
