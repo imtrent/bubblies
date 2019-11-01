@@ -1,28 +1,48 @@
-import React, { useState } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import Editor from '../../components/editor';
 import Controls from '../../components/controls';
 import { Themes } from '../../utils/Themes';
 import { Container } from './style';
 
-const Bubblies = () => {
-    const [settings, setSettings] = useState({
-        browser: {
-            tabBar: true,
-            border: '5px'
-        },
-        theme: Themes.ayu
-    });
+export default class Bubblies extends React.Component {
+    constructor() {
+        super();
 
-    const handleChangeTheme = newTheme => {
-        setSettings({ ...settings, theme: Themes[newTheme.value] });
+        this.state = {
+            browser: {
+                tabBar: true,
+                border: '5px'
+            },
+            theme: Themes.ayu
+        };
+    }
+
+    handleChangeTheme = newTheme => {
+        this.setState(() => ({ theme: Themes[newTheme.value] }));
     };
 
-    return (
-        <Container>
-            <Controls changeTheme={handleChangeTheme} />
-            <Editor settings={settings} />
-        </Container>
-    );
-};
+    handleBrowserSetting = (property, value) => {
+        this.setState(prevState => ({
+            browser: {
+                ...prevState.browser,
+                [property]: value
+            }
+        }));
+    };
 
-export default Bubblies;
+    render() {
+        return (
+            <Container>
+                <Controls
+                    handleChangeTheme={this.handleChangeTheme}
+                    handleBrowserSetting={this.handleBrowserSetting}
+                />
+                <Editor
+                    theme={this.state.theme}
+                    browserSettings={this.state.browser}
+                />
+            </Container>
+        );
+    }
+}
