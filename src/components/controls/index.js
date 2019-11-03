@@ -1,7 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
-import { themeList } from '../../utils/Themes';
+import TabBar from './tabBar';
 import Border from './border';
+import { themeList } from '../../utils/Themes';
 
 const Controls = ({ handleChangeTheme, handleBrowserSetting }) => {
     const changeBrowserSetting = (property, value) => {
@@ -16,6 +17,7 @@ const Controls = ({ handleChangeTheme, handleBrowserSetting }) => {
                 defaultValue={{ label: 'Ayu', value: 'ayu' }}
             />
             <Border changeBrowserSetting={changeBrowserSetting} />
+            <TabBar changeBrowserSetting={changeBrowserSetting} />
         </div>
     );
 };
