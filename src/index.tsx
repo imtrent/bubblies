@@ -2,18 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/global';
+import { ThemeProvider } from 'styled-components';
+import { SettingsProvider } from './store/SettingsContext';
 import { light } from './styles/theme';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<ThemeProvider theme={light}>
-			<GlobalStyle />
-			<App />
-		</ThemeProvider>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <SettingsProvider>
+      <ThemeProvider theme={light}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </SettingsProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
